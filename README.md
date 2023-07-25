@@ -7,8 +7,13 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
     - [Future Features](#future-features)
+- [🚀 Live Demo ](#live-demo)
 - [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
   - [Setup](#setup)
+  - [Install](#setup)
+  - [Usage](#usage)
+  - [Deployment ](#deployment-)
   - [Test](#test)
 - [👥 Authors](#authors)
 - [🤝 Contributing](#contributing)
@@ -52,21 +57,57 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://kamberebr.github.io/Leaderboard/dist/)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
 
-### Setup
+### Prerequisites <a name="prerequisites"></a>
+
+In order to run this project you need:
+
+- Install Git on your computer Git
+- Any text editor like VSCode
+- Install linters on your local environment
+
+
+### Setup <a name="setup"></a>
 
 To get a local copy up and running, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/kambereBr/Leaderboard.git`
 2. Navigate to the project directory: `cd leaderboard`
-3. Install the dependencies: `npm install`
-4. Build the project: `npm run build`
-5. Run the project: `npm run dev`
 
-Then, you will change everything you want!
+### Install <a name="install"></a>
+
+Install npm: 
+ ```
+ npm install
+
+ npm run build
+
+```
+
+### Usage <a name="usage"></a>
+
+Inside your IDE:
+
+
+```
+  npm run dev
+```
+
+### Deployment <a name="deployment"></a>
+
+You can deploy this project using: GitHub Pages
+
 
 ### Test
 

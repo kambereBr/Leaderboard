@@ -6,83 +6,84 @@ $rows-color: #dbd8d8;
 $font: 'Roboto', sans-serif;
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: $secondary-color;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    margin: 0;
-    margin-top: 50px;
-    overflow-y: auto;
+  background-color: $secondary-color;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  margin-top: 50px;
+  overflow-y: auto;
 }
 
 .container {
-    background-color: $secondary-color;
-    padding: 50px 20px;
-    width: 50%;
+  background-color: $secondary-color;
+  padding: 50px 20px;
+  width: 50%;
 }
 
-button, input {
-    height: 25px;
+button,
+input {
+  height: 25px;
 }
 
-h2, h3 {
-    font-size: 20px;
+h2,
+h3 {
+  font-size: 20px;
 }
 
 .score-container {
-    width: 50%;
+  width: 50%;
 }
 
 .score-form-container {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .recent-score-btn-container {
-    display: flex;
-    align-items: baseline;
+  display: flex;
+  align-items: baseline;
 }
 
 .table-score-container {
-    border: 3px black solid;
+  border: 3px black solid;
 }
 
 .recent-score-title {
-    margin-right: 10px;
-    width: 80%;
+  margin-right: 10px;
+  width: 80%;
 }
 
 .btn-refresh {
-    width: 20%;
+  width: 20%;
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
-
 tr:nth-child(even) {
-    background-color: $rows-color;
+  background-color: $rows-color;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-form {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .btn-submit {
-    width: 50%;
-    margin-left: 50%;
+  width: 50%;
+  margin-left: 50%;
 }
