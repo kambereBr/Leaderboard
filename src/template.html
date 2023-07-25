@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Leaderboard</h1>
+      </header>
+      <section class="score-form-container">
+        <div class="score-container">
+          <div class="recent-score-btn-container">
+            <h2 class="recent-score-title">Recent scores</h2>
+            <button class="btn-refresh">Refresh</button>
+          </div>
+          <div class="table-score-container">
+            <table>
+              <tbody id="body-list-score">
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="form-container">
+          <h3>Add your score</h3>
+          <form action="#">
+            <input type="text" class="input-form" id="palyer-name" name="palyer-name" placeholder="Your name">
+            <input type="number" class="input-form" id="palyer-score" name="palyer-score" placeholder="Your score">
+            <button type="button" class="btn-submit" id="btn-submit" name="btn-submit">Submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
