@@ -120,7 +120,7 @@ __webpack_require__.r(__webpack_exports__);
 var renderScore = function renderScore(data, htmlElement) {
   var list = '';
   data.forEach(function (element) {
-    list += "<tr><td>".concat(element.user, " : ").concat(element.score, "</td></tr>");
+    list += "<tr><td>".concat(element.user, " </td><td>").concat(element.score, "</td></tr>");
   });
   htmlElement.innerHTML = list;
 };
@@ -153,7 +153,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `* {
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: #ced9da;
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
@@ -164,15 +164,38 @@ body {
   overflow-y: auto;
 }
 
+h1,
+h2,
+h3 {
+  color: #545754;
+}
+
 .container {
   background-color: #f4f4f4;
   padding: 50px 20px;
-  width: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
 button,
 input {
-  height: 25px;
+  height: 30px;
+  padding: 5px;
+}
+
+button {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+}
+
+button:hover {
+  transform: scale(0.98);
 }
 
 h2,
@@ -180,24 +203,23 @@ h3 {
   font-size: 20px;
 }
 
-.score-container {
-  width: 50%;
-}
-
 .score-form-container {
   display: flex;
-  justify-content: space-between;
-  padding-left: 15px;
-  padding-right: 15px;
+  flex-direction: column;
 }
 
 .recent-score-btn-container {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .table-score-container {
-  border: 3px black solid;
+  border: 1px #ced9da solid;
+}
+
+.table-score-container:hover {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .recent-score-title {
@@ -205,16 +227,19 @@ h3 {
   width: 80%;
 }
 
-.btn-refresh {
-  width: 20%;
-}
-
 table {
   width: 100%;
+  padding: 5px;
 }
 
 tr:nth-child(even) {
   background-color: #dbd8d8;
+}
+
+thead > tr:nth-child(1) {
+  background-color: #4ca03b;
+  color: white;
+  text-align: left;
 }
 
 form {
@@ -229,7 +254,33 @@ form {
 .btn-submit {
   width: 50%;
   margin-left: 50%;
-}`, "",{"version":3,"sources":["webpack://./src/styles/style.scss"],"names":[],"mappings":"AAOA;EACE,sBAAA;AALF;;AAQA;EACE,yBATgB;EAUhB,iCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,gBAAA;EACA,SAAA;EACA,gBAAA;EACA,gBAAA;AALF;;AAQA;EACE,yBArBgB;EAsBhB,kBAAA;EACA,UAAA;AALF;;AAQA;;EAEE,YAAA;AALF;;AAQA;;EAEE,eAAA;AALF;;AAQA;EACE,UAAA;AALF;;AAQA;EACE,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,mBAAA;AALF;;AAQA;EACE,aAAA;EACA,qBAAA;AALF;;AAQA;EACE,uBAAA;AALF;;AAQA;EACE,kBAAA;EACA,UAAA;AALF;;AAQA;EACE,UAAA;AALF;;AAQA;EACE,WAAA;AALF;;AAQA;EACE,yBArEW;AAgEb;;AAQA;EACE,aAAA;EACA,sBAAA;AALF;;AAQA;EACE,mBAAA;AALF;;AAQA;EACE,UAAA;EACA,gBAAA;AALF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');\r\n\r\n$primary-color: #ced9da;\r\n$secondary-color: #f4f4f4;\r\n$rows-color: #dbd8d8;\r\n$font: 'Roboto', sans-serif;\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: $secondary-color;\r\n  font-family: 'Roboto', sans-serif;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  overflow: hidden;\r\n  margin: 0;\r\n  margin-top: 50px;\r\n  overflow-y: auto;\r\n}\r\n\r\n.container {\r\n  background-color: $secondary-color;\r\n  padding: 50px 20px;\r\n  width: 50%;\r\n}\r\n\r\nbutton,\r\ninput {\r\n  height: 25px;\r\n}\r\n\r\nh2,\r\nh3 {\r\n  font-size: 20px;\r\n}\r\n\r\n.score-container {\r\n  width: 50%;\r\n}\r\n\r\n.score-form-container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding-left: 15px;\r\n  padding-right: 15px;\r\n}\r\n\r\n.recent-score-btn-container {\r\n  display: flex;\r\n  align-items: baseline;\r\n}\r\n\r\n.table-score-container {\r\n  border: 3px black solid;\r\n}\r\n\r\n.recent-score-title {\r\n  margin-right: 10px;\r\n  width: 80%;\r\n}\r\n\r\n.btn-refresh {\r\n  width: 20%;\r\n}\r\n\r\ntable {\r\n  width: 100%;\r\n}\r\n\r\ntr:nth-child(even) {\r\n  background-color: $rows-color;\r\n}\r\n\r\nform {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.input-form {\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.btn-submit {\r\n  width: 50%;\r\n  margin-left: 50%;\r\n}\r\n"],"sourceRoot":""}]);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 50%;
+  }
+  .score-container {
+    width: 50%;
+    margin-right: 5px;
+  }
+  .score-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .recent-score-btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .form-container {
+    width: 40%;
+  }
+}`, "",{"version":3,"sources":["webpack://./src/styles/style.scss"],"names":[],"mappings":"AAWA;EACE,sBAAA;AATF;;AAYA;EACE,yBAdc;EAed,iCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,gBAAA;EACA,SAAA;EACA,gBAAA;EACA,gBAAA;AATF;;AAYA;;;EAGE,cAxBW;AAeb;;AAYA;EACE,yBA/BgB;EAgChB,kBAAA;EACA,wEA5BW;AAmBb;;AAYA;;EAEE,YAAA;EACA,YAAA;AATF;;AAYA;EACE,uBAAA;EACA,YAAA;EACA,iBAAA;EACA,YAAA;EACA,qBAAA;EACA,eAAA;EACA,eAAA;EACA,YAAA;EACA,YAAA;AATF;;AAYA;EACE,sBAAA;AATF;;AAYA;;EAEE,eAAA;AATF;;AAYA;EACE,aAAA;EACA,sBAAA;AATF;;AAYA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;AATF;;AAYA;EACE,yBAAA;AATF;;AAYA;EACE,sEAzEiB;AAgEnB;;AAYA;EACE,kBAAA;EACA,UAAA;AATF;;AAYA;EACE,WAAA;EACA,YAAA;AATF;;AAYA;EACE,yBA3FW;AAkFb;;AAYA;EACE,yBAhGY;EAiGZ,YAAA;EACA,gBAAA;AATF;;AAYA;EACE,aAAA;EACA,sBAAA;AATF;;AAYA;EACE,mBAAA;AATF;;AAgBA;EACE,UAAA;EACA,gBAAA;AAbF;;AAgBA;EACE;IACE,UAAA;EAbF;EAgBA;IACE,UAAA;IACA,iBAAA;EAdF;EAiBA;IACE,aAAA;IACA,mBAAA;IACA,8BAAA;IACA,kBAAA;IACA,mBAAA;EAfF;EAkBA;IACE,aAAA;IACA,mBAAA;IACA,qBAAA;IACA,8BAAA;EAhBF;EAmBA;IACE,UAAA;EAjBF;AACF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');\r\n\r\n$primary-color: #ced9da;\r\n$secondary-color: #f4f4f4;\r\n$green-color: #4ca03b;\r\n$rows-color: #dbd8d8;\r\n$gray-color: #545754;\r\n$font: 'Roboto', sans-serif;\r\n$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\r\n$box-shadow-table: 0 5px 5px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1);\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: $primary-color;\r\n  font-family: 'Roboto', sans-serif;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  overflow: hidden;\r\n  margin: 0;\r\n  margin-top: 50px;\r\n  overflow-y: auto;\r\n}\r\n\r\nh1,\r\nh2,\r\nh3 {\r\n  color: $gray-color;\r\n}\r\n\r\n.container {\r\n  background-color: $secondary-color;\r\n  padding: 50px 20px;\r\n  box-shadow: $box-shadow;\r\n}\r\n\r\nbutton,\r\ninput {\r\n  height: 30px;\r\n  padding: 5px;\r\n}\r\n\r\nbutton {\r\n  background-color: green;\r\n  color: white;\r\n  font-weight: bold;\r\n  border: none;\r\n  border-radius: 0.2rem;\r\n  padding: 0.2rem;\r\n  cursor: pointer;\r\n  width: 100px;\r\n  height: 30px;\r\n}\r\n\r\nbutton:hover {\r\n  transform: scale(0.98);\r\n}\r\n\r\nh2,\r\nh3 {\r\n  font-size: 20px;\r\n}\r\n\r\n.score-form-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.recent-score-btn-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.table-score-container {\r\n  border: 1px $primary-color solid;\r\n}\r\n\r\n.table-score-container:hover {\r\n  box-shadow: $box-shadow-table;\r\n}\r\n\r\n.recent-score-title {\r\n  margin-right: 10px;\r\n  width: 80%;\r\n}\r\n\r\ntable {\r\n  width: 100%;\r\n  padding: 5px;\r\n}\r\n\r\ntr:nth-child(even) {\r\n  background-color: $rows-color;\r\n}\r\n\r\nthead > tr:nth-child(1) {\r\n  background-color: $green-color;\r\n  color: white;\r\n  text-align: left;\r\n}\r\n\r\nform {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.input-form {\r\n  margin-bottom: 10px;\r\n}\r\n\r\n// .input-form:focus {\r\n//   outline: blue;\r\n// }\r\n\r\n.btn-submit {\r\n  width: 50%;\r\n  margin-left: 50%;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n  .container {\r\n    width: 50%;\r\n  }\r\n\r\n  .score-container {\r\n    width: 50%;\r\n    margin-right: 5px;\r\n  }\r\n\r\n  .score-form-container {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    padding-left: 15px;\r\n    padding-right: 15px;\r\n  }\r\n\r\n  .recent-score-btn-container {\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: baseline;\r\n    justify-content: space-between;\r\n  }\r\n\r\n  .form-container {\r\n    width: 40%;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -785,4 +836,4 @@ refreshBtn.addEventListener('click', function () {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlefcaa9724f3d5de261370.js.map
+//# sourceMappingURL=bundleda5cd903af4e17fc6b34.js.map

@@ -15,21 +15,47 @@
         <div class="score-container">
           <div class="recent-score-btn-container">
             <h2 class="recent-score-title">Recent scores</h2>
-            <button class="btn-refresh" id="refresh-btn"> Refresh</button>
+            <button class="btn-refresh" id="refresh-btn">Refresh</button>
           </div>
           <div class="table-score-container">
             <table>
-              <tbody id="body-list-score">
-              </tbody>
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody id="body-list-score"></tbody>
             </table>
           </div>
         </div>
         <div class="form-container">
           <h3>Add your score</h3>
           <form action="#" method="post" id="form-score">
-            <input type="text" class="input-form" id="player-name" name="player-name" placeholder="Your name" required>
-            <input type="number" class="input-form" id="player-score" name="player-score" placeholder="Your score" required>
-            <button type="submit" class="btn-submit" id="btn-submit" name="btn-submit">Submit</button>
+            <input
+              type="text"
+              class="input-form"
+              id="player-name"
+              name="player-name"
+              placeholder="Your name"
+              required
+            />
+            <input
+              type="number"
+              class="input-form"
+              id="player-score"
+              name="player-score"
+              placeholder="Your score"
+              required
+            />
+            <button
+              type="submit"
+              class="btn-submit"
+              id="btn-submit"
+              name="btn-submit"
+            >
+              Submit
+            </button>
           </form>
         </div>
       </section>
