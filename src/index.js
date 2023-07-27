@@ -1,12 +1,27 @@
 import './styles/style.scss';
-import renderScore from './utils';
+import { addAction, getAllScore, SCORE_END_POINT } from './modules/api.js';
+import Player from './modules/player.js';
 
-const arrayScore = [
-  { name: 'Albert A.', score: 100 },
-  { name: 'Georges D.', score: 80 },
-  { name: 'Frank G.', score: 70 },
-  { name: 'Silver M.', score: 100 },
-  { name: 'Robert K.', score: 100 },
-];
 const bodyList = document.getElementById('body-list-score');
-renderScore(arrayScore, bodyList);
+const formScore = document.getElementById('form-score');
+const inputName = document.getElementById('player-name');
+const inputScore = document.getElementById('player-score');
+const refreshBtn = document.getElementById('refresh-btn');
+
+getAllScore(bodyList);
+
+formScore.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (inputName.value !== '' && inputScore.value !== '') {
+    const newPlayer = new Player(inputName.value, inputScore.value);
+
+    addAction(SCORE_END_POINT, newPlayer).then(() => {
+      inputName.value = '';
+      inputScore.value = '';
+    });
+  }
+});
+
+refreshBtn.addEventListener('click', () => {
+  getAllScore(bodyList);
+});

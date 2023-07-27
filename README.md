@@ -25,7 +25,8 @@
 
 # 📖 Leaderboard <a name="about-project"></a>
 
-**Leaderboard** The leaderboard website displays scores submitted by different players. It also allows you to submit your score
+**Leaderboard** The leaderboard website displays scores submitted by different players. It also allows you to submit your score using 
+[**Leaderboard API**](https://microverse.notion.site/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -53,7 +54,6 @@
 ### Future Features <a name="future-features"></a>
 
 - **Implement a CSS Preprocessor.**
-- **Send and receive data from API.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
