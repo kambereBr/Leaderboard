@@ -18,7 +18,6 @@ formScore.addEventListener('submit', (e) => {
     addAction(SCORE_END_POINT, newPlayer).then(() => {
       inputName.value = '';
       inputScore.value = '';
-      getAllScore(bodyList);
     });
   }
 });

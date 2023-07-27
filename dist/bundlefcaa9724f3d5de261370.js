@@ -775,7 +775,6 @@ formScore.addEventListener('submit', function (e) {
     (0,_modules_api_js__WEBPACK_IMPORTED_MODULE_1__.addAction)(_modules_api_js__WEBPACK_IMPORTED_MODULE_1__.SCORE_END_POINT, newPlayer).then(function () {
       inputName.value = '';
       inputScore.value = '';
-      (0,_modules_api_js__WEBPACK_IMPORTED_MODULE_1__.getAllScore)(bodyList);
     });
   }
 });
@@ -786,4 +785,4 @@ refreshBtn.addEventListener('click', function () {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlebadacfe1191fd1ece86b.js.map
+//# sourceMappingURL=bundlefcaa9724f3d5de261370.js.map
