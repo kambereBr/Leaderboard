@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboard</title>
+  <script defer src="bundleda5cd903af4e17fc6b34.js"></script></head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Leaderboard</h1>
+      </header>
+      <section class="score-form-container">
+        <div class="score-container">
+          <div class="recent-score-btn-container">
+            <h2 class="recent-score-title">Recent scores</h2>
+            <button class="btn-refresh" id="refresh-btn">Refresh</button>
+          </div>
+          <div class="table-score-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody id="body-list-score"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="form-container">
+          <h3>Add your score</h3>
+          <form action="#" method="post" id="form-score">
+            <input
+              type="text"
+              class="input-form"
+              id="player-name"
+              name="player-name"
+              placeholder="Your name"
+              required
+            />
+            <input
+              type="number"
+              class="input-form"
+              id="player-score"
+              name="player-score"
+              placeholder="Your score"
+              required
+            />
+            <button
+              type="submit"
+              class="btn-submit"
+              id="btn-submit"
+              name="btn-submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

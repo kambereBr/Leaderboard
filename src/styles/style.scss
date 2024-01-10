@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$primary-color: #ced9da;
+$secondary-color: #f4f4f4;
+$green-color: #4ca03b;
+$rows-color: #dbd8d8;
+$gray-color: #545754;
+$font: 'Roboto', sans-serif;
+$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-table: 0 5px 5px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  margin-top: 50px;
+  overflow-y: auto;
+}
+
+h1,
+h2,
+h3 {
+  color: $gray-color;
+}
+
+.container {
+  background-color: $secondary-color;
+  padding: 50px 20px;
+  box-shadow: $box-shadow;
+}
+
+button,
+input {
+  height: 30px;
+  padding: 5px;
+}
+
+button {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+}
+
+button:hover {
+  transform: scale(0.98);
+}
+
+h2,
+h3 {
+  font-size: 20px;
+}
+
+.score-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-score-btn-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.table-score-container {
+  border: 1px $primary-color solid;
+}
+
+.table-score-container:hover {
+  box-shadow: $box-shadow-table;
+}
+
+.recent-score-title {
+  margin-right: 10px;
+  width: 80%;
+}
+
+table {
+  width: 100%;
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: $rows-color;
+}
+
+thead > tr:nth-child(1) {
+  background-color: $green-color;
+  color: white;
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form {
+  margin-bottom: 10px;
+}
+
+// .input-form:focus {
+//   outline: blue;
+// }
+
+.btn-submit {
+  width: 50%;
+  margin-left: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 50%;
+  }
+
+  .score-container {
+    width: 50%;
+    margin-right: 5px;
+  }
+
+  .score-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .recent-score-btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .form-container {
+    width: 40%;
+  }
+}
